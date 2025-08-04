@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"log"
+	"os"
 
 	"ent_postgres_crud/ent"
 
@@ -11,7 +12,11 @@ import (
 )
 
 func main() {
-	client, err := ent.Open("postgres", "host=localhost port=5432 user=postgres dbname=entdb password=Haarsh@123 sslmode=disable")
+	constStr := os.Getenv("Database_URL")
+	if constStr == "" {
+		log.Fatal("Database_URL environment variable is not set")
+	}
+	client, err := ent.Open("postgres", constStr)
 	if err != nil {
 		log.Fatalf("failed opening connection to postgres: %v", err)
 	}
