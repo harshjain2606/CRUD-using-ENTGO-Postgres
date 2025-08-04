@@ -32,7 +32,7 @@ func main() {
 	// CREATE
 	user, err := client.User.Create().
 		SetName("Harsh").
-		SetEmail("hhh@example.com").
+		SetEmail("hjjjjjhh@example.com").
 		Save(ctx)
 	if err != nil {
 		log.Fatalf("failed creating user: %v", err)
