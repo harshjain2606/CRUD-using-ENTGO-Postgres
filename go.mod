@@ -1,6 +1,6 @@
 module ent_postgres_crud
 
-go 1.24.4
+go 1.24.5
 
 require (
 	entgo.io/ent v0.14.4
